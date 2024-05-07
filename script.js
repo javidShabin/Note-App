@@ -7,6 +7,13 @@ notesBtn.addEventListener("click", () => {
     let img = document.createElement("img");
     inputBox.className = "input-box";
     inputBox.setAttribute("contenteditable", "true");
-    img.src = "images/delete.png"
-    notesContainer.appendChild(inputBox,img);
+    img.src = "./images/delete.png"
+    notesContainer.appendChild(inputBox).appendChild(img);
+})
+
+notesContainer.addEventListener("click", function(event){
+    if (event.target.tagName === "IMG") {
+        let item = event.target.parentElement;
+        item.remove();
+    }
 })
